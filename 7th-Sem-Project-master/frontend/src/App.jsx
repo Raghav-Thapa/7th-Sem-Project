@@ -1,6 +1,6 @@
 import React from 'react';
-import SentimentAnalysis from './SentimentAnalysis';
-import SentimentList from './SentimentList';
+import SentimentAnalysis from './components/SentimentAnalysis';
+import SentimentList from './components/SentimentList';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {

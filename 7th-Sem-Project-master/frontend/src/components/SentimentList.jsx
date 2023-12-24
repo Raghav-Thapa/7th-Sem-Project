@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SentimentAnalysis from './SentimentAnalysis';
 import ShowSentiment from './showSentiments';
+import { Container, Row, Image, Col,Card } from "react-bootstrap";
 
-function SentimentList() {
+const SentimentList = () => {
   const [positiveSentiments, setPositiveSentiments] = useState([]);
   const [negativeSentiments, setNegativeSentiments] = useState([]);
   const [positiveCount, setPositiveCount] = useState(0); // Initialize counts to 0
@@ -40,21 +41,26 @@ function SentimentList() {
 
 
   return (
-    <div className= "row" style={{ display:"flex"}} >
-      <div className="column" style={{marginRight:"300px"}}>
-      <h2>Total positive sentiments: ({positiveCount})</h2>
-      <h3>Positive Sentiments</h3>
+    
+      <Row style={{width:'1100px'}}>
+
+        <Col lg = {5} className='ms-5 mt-3 textcolourr'>
+        
+      <h4>Total positive reviews: ({positiveCount})</h4>
+      <h5 style={{color:"green"}}>Positive Reviews</h5>
       <ul>
         {positiveSentiments.map((sentiment) => (
           <li key={sentiment._id}>{sentiment.text}</li>
         ))}
         
       </ul>
-      </div>
+     
+        </Col>
 
-      <div className="column">
-      <h2>Total negative sentiments: ({negativeCount})</h2>
-      <h3>Negative Sentiments </h3>
+        <Col lg={5} className='ms-5 mt-3 textcolourr'>
+        
+      <h4>Total negative reviews: ({negativeCount})</h4>
+      <h5 style={{color:"red"}}>Negative Reviews </h5>
       <ul>
         {negativeSentiments.map((sentiment) => (
           <li key={sentiment._id}>{sentiment.text}</li>
@@ -66,8 +72,13 @@ function SentimentList() {
        {/* <SentimentAnalysis onSentimentAnalysis={updateSentimentCounts} /> */}
        {/* <showSentiment/> */}
        {/* <ShowSentiment/> */}
-       </div>
-    </div>
+      
+        </Col>
+
+      </Row>
+    
+
+  
   );
 }
 

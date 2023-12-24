@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import spiderbanner from "../assets/images/spiderbanner.jpg"
+import SentimentList from './SentimentList';
 
 function SentimentAnalysis({ onSentimentAnalysis }) {
   const [text, setText] = useState('');
@@ -37,23 +40,38 @@ function SentimentAnalysis({ onSentimentAnalysis }) {
   };
 
   return (
+    <div className='backgroundd'>
+    <Carousel>
+    <Carousel.Item>
+      <img className='bannerimg' src={spiderbanner} alt="" />
+    </Carousel.Item>
+  </Carousel>
     <div>
-      <h2>Sentiment Analysis</h2>
-      <textarea
+      <h5 className='ms-5' style={{color:'white'}}>Wite a review :</h5>
+      <textarea className='ms-5'
         placeholder="Enter text for sentiment analysis"
         value={text}
         onChange={handleTextChange}
       />
-      <button onClick={analyzeSentiment} disabled={loading}>
+      <button className='ms-3' onClick={analyzeSentiment} disabled={loading}>
         {loading ? 'Analyzing...' : 'Analyze'}
       </button>
       {sentiment && (
-        <div>
+        <div className='ms-5 textcolourr'>
           <h3>Analysis Results</h3>
           <p>Sentiment: {sentiment}</p>
         </div>
       )}
     </div>
+
+        <div>
+          <SentimentList/>
+        </div>
+
+
+    </div>
+
+    
   );
 }
 
