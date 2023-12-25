@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+// mongodb://127.0.0.1:27017/SentimentAnalysis
 // mongodb+srv://raghavmern:xEFnruxlnhmgx0HT@Cluster0.aguznsx.mongodb.net/SentimentAnalysis
 
 mongoose.connect('mongodb://127.0.0.1:27017/SentimentAnalysis', {
