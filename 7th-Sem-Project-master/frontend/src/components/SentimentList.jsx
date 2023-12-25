@@ -47,23 +47,23 @@ const SentimentList = () => {
         <Col lg = {5} className='ms-5 mt-3 textcolourr'>
         
       <h4>Total positive reviews: ({positiveCount})</h4>
-      <h5 style={{color:"green"}}>Positive Reviews</h5>
-      <ul>
+      <h5 style={{color:"green",marginTop:'40px'}}>Positive Reviews :</h5><br/>
+      <ul style={{listStyle:'none'}}>
         {positiveSentiments.map((sentiment) => (
-          <li key={sentiment._id}>{sentiment.text}</li>
+          <li style={{marginBottom:'20px'}} key={sentiment._id}><i class="fa-solid fa-circle-user fa-2xl"></i> &nbsp; <b>User name</b><br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {sentiment.text}</li>
         ))}
         
       </ul>
      
         </Col>
 
-        <Col lg={5} className='ms-5 mt-3 textcolourr'>
+        <Col lg={5} className='ms-5 mt-4 textcolourr'>
         
       <h4>Total negative reviews: ({negativeCount})</h4>
-      <h5 style={{color:"red"}}>Negative Reviews </h5>
-      <ul>
+      <h5 style={{color:"red",marginTop:'40px'}}>Negative Reviews : </h5><br/>
+      <ul style={{listStyle:'none'}}>
         {negativeSentiments.map((sentiment) => (
-          <li key={sentiment._id}>{sentiment.text}</li>
+          <li style={{marginBottom:'20px'}} key={sentiment._id}><i class="fa-solid fa-circle-user fa-2xl"></i> &nbsp; <b> User name </b><br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {sentiment.text}</li>
         ))}
 
      
