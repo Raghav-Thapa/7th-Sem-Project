@@ -72,7 +72,7 @@ app.post('/predict', (req, res) => {
     }
   });
 });
-
+//list sentiments
 app.get('/sentiments', async (req, res) => {
   try {
     const positiveSentiments = await SentimentResult.find({ sentiment: 'pos' });
